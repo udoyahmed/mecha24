@@ -7,6 +7,7 @@ export interface TreasureFlow {
     Quiz_Code: string;     // The unique identifier for the quiz page (e.g., "quiz-A")
     Quiz_Question: string; // The question text
     Quiz_Answer: string;   // The correct answer for the quiz (store as string)
+    Secret_Word: string;
 }
 
 export const treasureFlowDB: TreasureFlow[] = [
@@ -16,6 +17,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Code": "quiz-4564687",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
         "Quiz_Answer": "300",
+        "Secret_Word": "EEE CDI"
     },
     // You can add other independent treasure flows here, if needed
     {
@@ -24,6 +26,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Code": "quiz-12345645",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
         "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Secret_Word": "Mecha Drawing CDI"
     },
 ];
 

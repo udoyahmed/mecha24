@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-// REMOVED: import { useParams } from 'next/navigation'; // This was causing the compilation error
+// Note: next/navigation import is intentionally removed to fix compilation errors.
 
 export default function TreasureQuizPage() {
-    // We now manage codeId as state and extract it using client-side JS
+    // Workaround to get ID from URL path (replaces Next.js useParams)
     const [codeId, setCodeId] = useState('');
 
     // Quiz State
@@ -13,6 +13,9 @@ export default function TreasureQuizPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [submissionTime, setSubmissionTime] = useState<string | null>(null); 
     
+    // State to hold the secret word revealed by the API
+    const [secretWord, setSecretWord] = useState<string | null>(null); 
+    
     // Question Fetching State
     const [quizQuestion, setQuizQuestion] = useState('Retrieving puzzle details...');
     const [isQuestionLoading, setIsQuestionLoading] = useState(true);
@@ -20,17 +23,16 @@ export default function TreasureQuizPage() {
     // Helper to check if the question content is a URL
     const isImageQuestion = quizQuestion.startsWith('http');
 
-    // --- EFFECT TO EXTRACT ID FROM URL (Workaround for useParams) ---
+    // --- EFFECT 1: EXTRACT ID FROM URL PATH (Workaround) ---
     useEffect(() => {
         // Only run this logic on the client side
         if (typeof window !== 'undefined') {
             const path = window.location.pathname; // e.g., /quiz/quiz-A
             const parts = path.split('/').filter(part => part.length > 0);
             
-            // The ID should be the last part of the path (e.g., 'quiz-A')
+            // The ID should be the last part of the path 
             if (parts.length > 0) {
                 const id = parts[parts.length - 1];
-                // Check if the path format matches expectations (starts with 'quiz' or is the root ID)
                 if (id && id !== 'quiz') { 
                     setCodeId(id);
                 }
@@ -38,13 +40,14 @@ export default function TreasureQuizPage() {
         }
     }, []); 
 
-    // --- EFFECT TO FETCH QUESTION ON CODE ID LOADED ---
+    // --- EFFECT 2: FETCH QUESTION ON CODE ID LOADED ---
     useEffect(() => {
         if (!codeId) return; // Wait until codeId is extracted from the URL
 
         const fetchQuestion = async () => {
             setIsQuestionLoading(true);
             try {
+                // Call the API route for the question
                 const response = await fetch(`/api/quiz-question?codeId=${codeId}`); 
                 const data = await response.json();
                 
@@ -62,7 +65,7 @@ export default function TreasureQuizPage() {
         };
 
         fetchQuestion();
-    }, [codeId]); // Runs when the codeId state is successfully set
+    }, [codeId]);
 
     // --- FORM SUBMISSION HANDLER ---
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -70,8 +73,8 @@ export default function TreasureQuizPage() {
         setMessage(''); 
         setIsLoading(true);
         setSubmissionTime(null); 
+        setSecretWord(null); 
 
-        // Prevent submission if ID hasn't loaded yet
         if (!codeId) {
             setMessage('🚨 Quiz identifier not loaded yet. Please wait.');
             setIsLoading(false);
@@ -79,11 +82,12 @@ export default function TreasureQuizPage() {
         }
 
         try {
+            // Call the verification API
             const response = await fetch('/api/quiz', { 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    quizCode: codeId, 
+                    quizCode: codeId, // Correct key name for API
                     submittedAnswer: answer,
                 }),
             });
@@ -94,6 +98,12 @@ export default function TreasureQuizPage() {
                 setMessage('✅ ' + data.message);
                 const now = new Date();
                 setSubmissionTime(now.toLocaleTimeString()); 
+                
+                // Set the secret word received from the API
+                if (data.secretWord) {
+                    setSecretWord(data.secretWord);
+                }
+
             } else {
                 setMessage('❌ ' + data.message);
             }
@@ -110,7 +120,7 @@ export default function TreasureQuizPage() {
         <div style={{ padding: '20px', maxWidth: '600px', margin: '50px auto', border: '2px dashed gold', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
             <h2 style={{borderBottom: '2px solid gold', paddingBottom: '10px', color: '#ff4500'}}>Final Challenge: {codeId || 'Loading...'}</h2>
             
-            {/* Conditional Rendering Logic for Question Content */}
+            {/* Conditional Rendering Logic for Question Content (Image or Text) */}
             <div style={{ minHeight: isImageQuestion ? '400px' : '30px', margin: '20px 0', textAlign: 'center' }}>
                 {isQuestionLoading || !codeId ? (
                     <p style={{ fontSize: '1.1em', fontWeight: '500' }}>Retrieving puzzle details...</p>
@@ -153,11 +163,23 @@ export default function TreasureQuizPage() {
                 </p>
             )}
             
-            {/* Display the submission time if available and the answer was correct */}
+            {/* Display the submission time */}
             {submissionTime && message.startsWith('✅') && (
                 <p style={{ marginTop: '10px', fontSize: '0.9em', color: '#FFFFFF' }}>
                     Submission recorded at: <span style={{ fontWeight: 'bold' }}>{submissionTime}</span>
                 </p>
+            )}
+            
+            {/* Display the Secret Word */}
+            {secretWord && message.startsWith('✅') && (
+                <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', backgroundColor: '#e0ffff', textAlign: 'center' }}>
+                    <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.2em', marginBottom: '5px' }}>
+                        🎉 Your Secret Word is:
+                    </p>
+                    <p style={{ fontWeight: '900', color: '#ff4500', fontSize: '1.8em', letterSpacing: '2px' }}>
+                        {secretWord}
+                    </p>
+                </div>
             )}
         </div>
     );
