@@ -1,12 +1,13 @@
-// app/[codeId]/page.tsx
-
+// app/treasure/[codeId]/page.tsx
 'use client';
 
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 export default function TreasurePage() {
     const params = useParams();
+    const router = useRouter(); // Initialize router for redirection
+    // Safely extract the dynamic code ID (e.g., 'treasure1234')
     const pageCode = Array.isArray(params.codeId) ? params.codeId[0] : params.codeId || '';
 
     const [password, setPassword] = useState('');
@@ -19,8 +20,8 @@ export default function TreasurePage() {
         setIsLoading(true);
 
         try {
-            // Fetch request goes to the API route defined in app/api/verify-password/route.ts
-            const response = await fetch('/api/verify-password', {
+            // Fetch request goes to the API route defined in app/api/password/route.ts
+            const response = await fetch('/api/password', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -32,7 +33,12 @@ export default function TreasurePage() {
             const data = await response.json();
 
             if (data.isCorrect) {
-                setMessage('✅ The code is correct! ' + data.message);
+                setMessage('✅ Code accepted! ' + data.message);
+                
+                // REDIRECT to the new URL: /quiz/quiz-A
+                if (data.nextPageUrl) {
+                    router.push(data.nextPageUrl); 
+                }
             } else {
                 setMessage('❌ ' + data.message);
                 setPassword(''); // Clear input on failure
@@ -47,12 +53,12 @@ export default function TreasurePage() {
     };
 
     return ( 
-        <div style={{ padding: '20px', maxWidth: '400px', margin: '50px auto', border: '1px solid #ccc', borderRadius: '8px' }}>
-            <h2>Treasure Hunt: {pageCode}</h2>
+        <div style={{ padding: '20px', maxWidth: '400px', margin: '50px auto', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
+            <h2 style={{borderBottom: '1px solid #ddd', paddingBottom: '10px', color: '#0070f3'}}>Treasure Location: {pageCode}</h2>
             
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '20px' }}>
                 <label htmlFor="password-input" style={{ fontWeight: 'bold' }}>
-                    Enter Code for {pageCode}:
+                    Enter Password:
                 </label>
                 <input
                     id="password-input"
@@ -69,18 +75,10 @@ export default function TreasurePage() {
             </form>
 
             {message && (
-            <p style={{ 
-                fontWeight: 'bold', 
-                marginTop: '20px', 
-                padding: '10px', 
-                borderLeft: message.startsWith('✅') ? '4px solid green' : '4px solid red', 
-                backgroundColor: message.startsWith('✅') ? '#e6ffe6' : '#ffe6e6',
-                // 💡 ADDED THIS LINE FOR TEXT COLOR
-                color: message.startsWith('✅') ? '#333' : '#a00' // Dark gray for success, dark red for error
-            }}>
-        {message}
-    </p>
-)}
+                <p style={{ fontWeight: 'bold', marginTop: '20px', padding: '10px', borderLeft: message.startsWith('✅') ? '4px solid green' : '4px solid red', backgroundColor: message.startsWith('✅') ? '#e6ffe6' : '#ffe6e6', color: message.startsWith('✅') ? '#333' : '#a00' }}>
+                    {message}
+                </p>
+            )}
         </div>
     );
 }
