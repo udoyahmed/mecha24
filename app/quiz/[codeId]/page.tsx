@@ -118,7 +118,7 @@ export default function TreasureQuizPage() {
 
     return ( 
         <div style={{ padding: '20px', maxWidth: '600px', margin: '50px auto', border: '2px dashed gold', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-            <h2 style={{borderBottom: '2px solid gold', paddingBottom: '10px', color: '#ff4500'}}>Final Challenge: {codeId || 'Loading...'}</h2>
+            <h2 style={{borderBottom: '2px solid gold', paddingBottom: '10px', color: '#ff4500'}}>Quiz Code: {codeId || 'Loading...'}</h2>
             
             {/* Conditional Rendering Logic for Question Content (Image or Text) */}
             <div style={{ minHeight: isImageQuestion ? '400px' : '30px', margin: '20px 0', textAlign: 'center' }}>
@@ -165,7 +165,7 @@ export default function TreasureQuizPage() {
             
             {/* Display the submission time */}
             {submissionTime && message.startsWith('✅') && (
-                <p style={{ marginTop: '10px', fontSize: '0.9em', color: '#FFFFFF' }}>
+                <p style={{ color: "#FF0000", fontWeight: 'bold', marginTop: '20px', padding: '10px', backgroundColor: "#FFFFFF" }}>
                     Submission recorded at: <span style={{ fontWeight: 'bold' }}>{submissionTime}</span>
                 </p>
             )}
@@ -174,7 +174,7 @@ export default function TreasureQuizPage() {
             {secretWord && message.startsWith('✅') && (
                 <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', backgroundColor: '#e0ffff', textAlign: 'center' }}>
                     <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.2em', marginBottom: '5px' }}>
-                        🎉 Your Secret Word is:
+                        Secret Word:
                     </p>
                     <p style={{ fontWeight: '900', color: '#ff4500', fontSize: '1.8em', letterSpacing: '2px' }}>
                         {secretWord}

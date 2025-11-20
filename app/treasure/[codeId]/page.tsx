@@ -54,11 +54,11 @@ export default function TreasurePage() {
 
     return ( 
         <div style={{ padding: '20px', maxWidth: '400px', margin: '50px auto', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
-            <h2 style={{borderBottom: '1px solid #ddd', paddingBottom: '10px', color: '#0070f3'}}>Treasure Location: {pageCode}</h2>
+            <h2 style={{borderBottom: '1px solid #ddd', paddingBottom: '10px', color: '#ff4500'}}>Treasure Code: {pageCode}</h2>
             
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '20px' }}>
                 <label htmlFor="password-input" style={{ fontWeight: 'bold' }}>
-                    Enter Password:
+                    Enter Code:
                 </label>
                 <input
                     id="password-input"
@@ -69,7 +69,7 @@ export default function TreasurePage() {
                     disabled={isLoading}
                     style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }}
                 />
-                <button type="submit" disabled={isLoading} style={{ padding: '10px', backgroundColor: isLoading ? '#aaa' : '#0070f3', color: 'white', border: 'none', borderRadius: '4px', cursor: isLoading ? 'not-allowed' : 'pointer' }}>
+                <button type="submit" disabled={isLoading} style={{ padding: '10px', backgroundColor: isLoading ? '#aaa' : '#ff4500', color: 'white', border: 'none', borderRadius: '4px', cursor: isLoading ? 'not-allowed' : 'pointer' }}>
                     {isLoading ? 'Verifying...' : 'Submit'}
                 </button>
             </form>
