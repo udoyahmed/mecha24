@@ -23,7 +23,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Password": 67890,
         "Quiz_Code": "quiz-12345645",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "blindness when moving between decks", // Example long string answer
+        "Quiz_Answer": "eid mubarak", // Example long string answer
     },
 ];
 
