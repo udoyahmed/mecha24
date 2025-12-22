@@ -12,7 +12,7 @@ export interface TreasureFlow {
 
 export const treasureFlowDB: TreasureFlow[] = [
     {
-        "Code": "treasure1234",
+        "Code": "indiagateitis",
         "Password": 12345,
         "Quiz_Code": "quiz-4564687",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
@@ -22,9 +22,9 @@ export const treasureFlowDB: TreasureFlow[] = [
     {
         "Code": "bestbuildingbuet",
         "Password": 67890,
-        "Quiz_Code": "quiz-12345645",
-        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Quiz_Code": "sherlockholmes2009-1:59:00",
+        "Quiz_Question": "https://i.postimg.cc/TwrP46h6/Screenshot-2025-12-23-034727-min.png",
+        "Quiz_Answer": "isometric", // Example long string answer
         "Secret_Word": "Mecha Drawing CDI"
     },
     {

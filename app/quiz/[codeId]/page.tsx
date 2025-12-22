@@ -174,7 +174,7 @@ export default function TreasureQuizPage() {
             {secretWord && message.startsWith('✅') && (
                 <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', backgroundColor: '#e0ffff', textAlign: 'center' }}>
                     <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.2em', marginBottom: '5px' }}>
-                        Secret Word:
+                        Clue:
                     </p>
                     <p style={{ fontWeight: '900', color: '#ff4500', fontSize: '1.8em', letterSpacing: '2px' }}>
                         {secretWord}
