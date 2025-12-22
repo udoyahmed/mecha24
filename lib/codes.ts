@@ -22,7 +22,7 @@ export const treasureFlowDB: TreasureFlow[] = [
     {
         "Code": "bestbuildingbuet",
         "Password": 67890,
-        "Quiz_Code": "sherlockholmes2009-1:59:00",
+        "Quiz_Code": "sherlockholmes200915900",
         "Quiz_Question": "https://i.postimg.cc/TwrP46h6/Screenshot-2025-12-23-034727-min.png",
         "Quiz_Answer": "isometric", // Example long string answer
         "Secret_Word": "Mecha Drawing CDI"
