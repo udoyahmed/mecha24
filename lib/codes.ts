@@ -19,9 +19,40 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Answer": "300",
         "Secret_Word": "EEE CDI"
     },
-    // You can add other independent treasure flows here, if needed
     {
-        "Code": "piratechest99",
+        "Code": "bestbuildingbuet",
+        "Password": 67890,
+        "Quiz_Code": "quiz-12345645",
+        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
+        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Secret_Word": "Mecha Drawing CDI"
+    },
+    {
+        "Code": "upsidewasdown",
+        "Password": 67890,
+        "Quiz_Code": "quiz-12345645",
+        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
+        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Secret_Word": "Mecha Drawing CDI"
+    },
+    {
+        "Code": "buetbrsbutnotbrs",
+        "Password": 67890,
+        "Quiz_Code": "quiz-12345645",
+        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
+        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Secret_Word": "Mecha Drawing CDI"
+    },
+    {
+        "Code": "doorcoloredred",
+        "Password": 67890,
+        "Quiz_Code": "quiz-12345645",
+        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
+        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Secret_Word": "Mecha Drawing CDI"
+    },
+    {
+        "Code": "archfflookup",
         "Password": 67890,
         "Quiz_Code": "quiz-12345645",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
