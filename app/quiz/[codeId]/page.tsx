@@ -125,15 +125,17 @@ export default function TreasureQuizPage() {
                 {isQuestionLoading || !codeId ? (
                     <p style={{ fontSize: '1.1em', fontWeight: '500' }}>Retrieving puzzle details...</p>
                 ) : isImageQuestion ? (
-                    <img 
-                        src={quizQuestion} 
-                        alt="Quiz Question Image" 
-                        style={{ maxWidth: '100%', height: 'auto', borderRadius: '4px', border: '1px solid #ccc' }}
-                        onError={(e) => {
-                            (e.target as HTMLImageElement).onerror = null; 
-                            (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/cc0000/ffffff?text=Image+Failed+to+Load'; 
-                        }}
-                    />
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <img 
+                            src={quizQuestion} 
+                            alt="Quiz Question Image" 
+                            style={{ maxWidth: '100%', height: 'auto', borderRadius: '4px', border: '1px solid #ccc' }}
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).onerror = null; 
+                                (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/cc0000/ffffff?text=Image+Failed+to+Load'; 
+                            }}
+                        />
+                    </div>
                 ) : (
                     <p style={{ fontSize: '1.1em', fontWeight: '500' }}>{quizQuestion}</p>
                 )}
