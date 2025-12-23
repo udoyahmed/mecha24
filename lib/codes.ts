@@ -19,12 +19,12 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Answer": "300",
         "Secret_Word": "EEE CDI"
     },
-    {
+    {       // complete
         "Code": "bestbuildingbuet",
         "Password": 67890,
         "Quiz_Code": "sherlockholmes200915900",
         "Quiz_Question": "https://i.postimg.cc/TwrP46h6/Screenshot-2025-12-23-034727-min.png",
-        "Quiz_Answer": "isometric", // Example long string answer
+        "Quiz_Answer": "isometric", 
         "Secret_Word": "Mecha Drawing CDI"
     },
     {
@@ -32,7 +32,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Password": 67890,
         "Quiz_Code": "quiz-12345645",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Quiz_Answer": "eid mubarak", 
         "Secret_Word": "Mecha Drawing CDI"
     },
     {
@@ -40,7 +40,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Password": 67890,
         "Quiz_Code": "quiz-12345645",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Quiz_Answer": "eid mubarak", 
         "Secret_Word": "Mecha Drawing CDI"
     },
     {
@@ -48,16 +48,16 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Password": 67890,
         "Quiz_Code": "quiz-12345645",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", // Example long string answer
+        "Quiz_Answer": "eid mubarak", 
         "Secret_Word": "Mecha Drawing CDI"
     },
     {
         "Code": "archfflookup",
         "Password": 67890,
-        "Quiz_Code": "quiz-12345645",
-        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", // Example long string answer
-        "Secret_Word": "Mecha Drawing CDI"
+        "Quiz_Code": "quiz-code-12345645",
+        "Quiz_Question": "https://media1.tenor.com/m/lcehRTIw1_8AAAAC/excited-fuego.gif",
+        "Quiz_Answer": "eid mubarak",
+        "Secret_Word": "Welding Shop CDI"
     },
 ];
 
