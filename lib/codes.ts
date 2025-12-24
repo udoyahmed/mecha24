@@ -55,8 +55,8 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Code": "archfflookup",
         "Password": 67890,
         "Quiz_Code": "quiz-code-12345645",
-        "Quiz_Question": "https://media1.tenor.com/m/lcehRTIw1_8AAAAC/excited-fuego.gif",
-        "Quiz_Answer": "eid mubarak",
+        "Quiz_Question": "https://i.postimg.cc/kGD39Ccj/cake-f.jpg",
+        "Quiz_Answer": "gas welding",
         "Secret_Word": "Welding Shop CDI"
     },
 ];
