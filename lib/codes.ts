@@ -12,50 +12,50 @@ export interface TreasureFlow {
 
 export const treasureFlowDB: TreasureFlow[] = [
     {
-        "Code": "indiagateitis",
-        "Password": 12345,
-        "Quiz_Code": "quiz-4564687",
+        "Code": "T883Q28d5aEnaa",
+        "Password": 907235,
+        "Quiz_Code": "OIg542sST2Kow0",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "300",
+        "Quiz_Answer": "reddit",
         "Secret_Word": "EEE CDI"
     },
-    {       // complete
-        "Code": "bestbuildingbuet",
-        "Password": 67890,
-        "Quiz_Code": "sherlockholmes200915900",
+    {    
+        "Code": "4mjiDm72b79s8Q",
+        "Password": 179885,
+        "Quiz_Code": "H0rPNq00mzua8M",
         "Quiz_Question": "https://i.postimg.cc/TwrP46h6/Screenshot-2025-12-23-034727-min.png",
         "Quiz_Answer": "isometric", 
         "Secret_Word": "Mecha Drawing CDI"
     },
     {
-        "Code": "upsidewasdown",
-        "Password": 67890,
-        "Quiz_Code": "quiz-12345645",
+        "Code": "TN2j3k7cn6x19F",
+        "Password": 246311,
+        "Quiz_Code": "T92C943r7R3kKH",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", 
+        "Quiz_Answer": "refrigerant", 
         "Secret_Word": "Mecha Drawing CDI"
     },
     {
-        "Code": "buetbrsbutnotbrs",
-        "Password": 67890,
-        "Quiz_Code": "quiz-12345645",
+        "Code": "85mz786bdzHd18",
+        "Password": 341691,
+        "Quiz_Code": "9SOx8ukPc6c4NX",
         "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", 
+        "Quiz_Answer": "advisor", 
         "Secret_Word": "Mecha Drawing CDI"
     },
-    {
-        "Code": "doorcoloredred",
-        "Password": 67890,
-        "Quiz_Code": "quiz-12345645",
-        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
-        "Quiz_Answer": "eid mubarak", 
+    {           // complete
+        "Code": "62c729OTIP60bR",
+        "Password": 712396,
+        "Quiz_Code": "52nX50XRt4EmIZ",
+        "Quiz_Question": "https://i.postimg.cc/3xdg66Cp/52n-X50XRt4Em-IZ.jpg",
+        "Quiz_Answer": "crucible", 
         "Secret_Word": "Mecha Drawing CDI"
     },
-    {
-        "Code": "archfflookup",
-        "Password": 67890,
-        "Quiz_Code": "quiz-code-12345645",
-        "Quiz_Question": "https://i.postimg.cc/kGD39Ccj/cake-f.jpg",
+    {           // complete
+        "Code": "Xwc8Z93B3SEg6X",
+        "Password": 483518,
+        "Quiz_Code": "al8INHy3vC79AB",
+        "Quiz_Question": "https://i.postimg.cc/28CGH2K9/image.png",
         "Quiz_Answer": "gas welding",
         "Secret_Word": "Welding Shop CDI"
     },
