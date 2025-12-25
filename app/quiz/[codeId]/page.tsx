@@ -126,7 +126,7 @@ export default function TreasureQuizPage() {
         justifyContent: 'center',
         padding: '20px',
         /* Background Image Placeholder */
-        backgroundImage: 'url("https://i.postimg.cc/sXsX7QTL/image.png")', 
+        backgroundImage: 'url("https://i.postimg.cc/CKbqDfV6/image.png")', 
         backgroundColor: '#f4f4f4', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -135,13 +135,23 @@ export default function TreasureQuizPage() {
         
         {/* Logo Section */}
         <img 
-            src="https://i.postimg.cc/909n20hf/image-removebg-preview.png" 
+            src="https://i.postimg.cc/g0cxwtN6/logo4.png" 
             alt="Mechville Logo" 
-            style={{ width: '120px', marginBottom: '10px' }} 
+            style={{ width: '150px', marginBottom: '5px' }} 
         />
 
         {/* Title Section */}
-        <h1 style={{ color: '#ff4500', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px', textAlign: 'center' }}>
+        <h1 style={{ 
+            color: '#851c1cff', 
+            marginBottom: '10px', 
+            letterSpacing: '2px', 
+            textAlign: 'center',
+            /* Added Font Styles Below */
+            fontFamily: '"Manufacturing Consent", sans-serif', 
+            fontSize: '2rem', // Adjust size as needed for this specific font
+            fontWeight: 'normal',
+            textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
+        }}>
             The Hound of Mechville
         </h1>
 
@@ -155,7 +165,7 @@ export default function TreasureQuizPage() {
             borderRadius: '12px', 
             boxShadow: '0 8px 16px rgba(0,0,0,0.2)' 
         }}>
-            <h2 style={{ borderBottom: '2px solid gold', paddingBottom: '10px', color: '#ff4500', marginTop: 0 }}>
+            <h2 style={{ borderBottom: '2px solid gold', paddingBottom: '10px', color: '#862a2aff', marginTop: 0 }}>
                 Quiz Code: {codeId || 'Loading...'}
             </h2>
             
@@ -206,7 +216,7 @@ export default function TreasureQuizPage() {
                     disabled={isLoading || isQuestionLoading || !codeId || message.startsWith('✅')} 
                     style={{ 
                         padding: '12px', 
-                        backgroundColor: (isLoading || isQuestionLoading || !codeId || message.startsWith('✅')) ? '#aaa' : '#ff4500', 
+                        backgroundColor: (isLoading || isQuestionLoading || !codeId || message.startsWith('✅')) ? '#aaa' : '#862a2aff', 
                         color: 'white', 
                         border: 'none', 
                         borderRadius: '4px', 
