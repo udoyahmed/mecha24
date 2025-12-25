@@ -52,33 +52,97 @@ export default function TreasurePage() {
         }
     };
 
-    return ( 
-        <div style={{ padding: '20px', maxWidth: '400px', margin: '50px auto', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
-            <h2 style={{borderBottom: '1px solid #ddd', paddingBottom: '10px', color: '#ff4500'}}>Treasure Code: {pageCode}</h2>
+    return (
+    <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center',
+        padding: '20px',
+        backgroundImage: 'url("YOUR_IMAGE_URL_HERE")', 
+        backgroundColor: '#f4f4f4', 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        fontFamily: 'sans-serif'
+    }}>
+        
+        <img 
+            src="https://i.postimg.cc/909n20hf/image-removebg-preview.png" 
+            alt="Mechville Logo" 
+            style={{ width: '120px', marginBottom: '10px' }} 
+        />
+
+        <h1 style={{ color: '#333', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px', textAlign: 'center' }}>
+            The Hound of Mechville
+        </h1>
+
+        <div style={{ 
+            padding: '30px', 
+            maxWidth: '400px', 
+            width: '100%',
+            backgroundColor: 'rgba(255, 255, 255, 0.98)', 
+            border: '1px solid #ccc', 
+            borderRadius: '12px', 
+            boxShadow: '0 8px 16px rgba(0,0,0,0.2)' 
+        }}>
+            <h2 style={{ borderBottom: '1px solid #ddd', paddingBottom: '10px', color: '#ff4500', marginTop: 0 }}>
+                Treasure Code: {pageCode}
+            </h2>
             
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '20px' }}>
-                <label htmlFor="password-input" style={{ fontWeight: 'bold' }}>
+                <label htmlFor="password-input" style={{ fontWeight: 'bold', color: '#333' }}>
                     Enter Code:
                 </label>
                 <input
                     id="password-input"
                     type="password"
+                    placeholder="••••••••"
                     value={password}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                     required
                     disabled={isLoading}
-                    style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }}
+                    /* EXPLICIT COLORS ADDED HERE */
+                    style={{ 
+                        padding: '12px', 
+                        border: '2px solid #bbb', // Darker border for visibility
+                        borderRadius: '4px',
+                        backgroundColor: '#ffffff', // Force white background
+                        color: '#000000', // Force black text/dots
+                        fontSize: '16px'
+                    }}
                 />
-                <button type="submit" disabled={isLoading} style={{ padding: '10px', backgroundColor: isLoading ? '#aaa' : '#ff4500', color: 'white', border: 'none', borderRadius: '4px', cursor: isLoading ? 'not-allowed' : 'pointer' }}>
+                <button 
+                    type="submit" 
+                    disabled={isLoading} 
+                    style={{ 
+                        padding: '12px', 
+                        backgroundColor: isLoading ? '#aaa' : '#ff4500', 
+                        color: 'white', 
+                        border: 'none', 
+                        borderRadius: '4px', 
+                        fontWeight: 'bold',
+                        cursor: isLoading ? 'not-allowed' : 'pointer'
+                    }}
+                >
                     {isLoading ? 'Verifying...' : 'Submit'}
                 </button>
             </form>
 
             {message && (
-                <p style={{ fontWeight: 'bold', marginTop: '20px', padding: '10px', borderLeft: message.startsWith('✅') ? '4px solid green' : '4px solid red', backgroundColor: message.startsWith('✅') ? '#e6ffe6' : '#ffe6e6', color: message.startsWith('✅') ? '#333' : '#a00' }}>
+                <p style={{ 
+                    fontWeight: 'bold', 
+                    marginTop: '20px', 
+                    padding: '10px', 
+                    borderRadius: '4px',
+                    borderLeft: message.startsWith('✅') ? '4px solid green' : '4px solid red', 
+                    backgroundColor: message.startsWith('✅') ? '#e6ffe6' : '#ffe6e6', 
+                    color: message.startsWith('✅') ? '#333' : '#a00' 
+                }}>
                     {message}
                 </p>
             )}
         </div>
-    );
+    </div>
+);
 }

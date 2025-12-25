@@ -116,20 +116,59 @@ export default function TreasureQuizPage() {
         }
     };
 
-    return ( 
-        <div style={{ padding: '20px', maxWidth: '600px', margin: '50px auto', border: '2px dashed gold', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-            <h2 style={{borderBottom: '2px solid gold', paddingBottom: '10px', color: '#ff4500'}}>Quiz Code: {codeId || 'Loading...'}</h2>
+    return (
+    /* Background Placeholder Container */
+    <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center',
+        padding: '20px',
+        /* Background Image Placeholder */
+        backgroundImage: 'url("https://i.postimg.cc/sXsX7QTL/image.png")', 
+        backgroundColor: '#f4f4f4', 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        fontFamily: 'sans-serif'
+    }}>
+        
+        {/* Logo Section */}
+        <img 
+            src="https://i.postimg.cc/909n20hf/image-removebg-preview.png" 
+            alt="Mechville Logo" 
+            style={{ width: '120px', marginBottom: '10px' }} 
+        />
+
+        {/* Title Section */}
+        <h1 style={{ color: '#ff4500', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px', textAlign: 'center' }}>
+            The Hound of Mechville
+        </h1>
+
+        {/* Main Quiz Card */}
+        <div style={{ 
+            padding: '30px', 
+            maxWidth: '600px', 
+            width: '100%',
+            backgroundColor: 'rgba(255, 255, 255, 0.98)', 
+            border: '2px dashed gold', 
+            borderRadius: '12px', 
+            boxShadow: '0 8px 16px rgba(0,0,0,0.2)' 
+        }}>
+            <h2 style={{ borderBottom: '2px solid gold', paddingBottom: '10px', color: '#ff4500', marginTop: 0 }}>
+                Quiz Code: {codeId || 'Loading...'}
+            </h2>
             
-            {/* Conditional Rendering Logic for Question Content (Image or Text) */}
-            <div style={{ minHeight: isImageQuestion ? '400px' : '30px', margin: '20px 0', textAlign: 'center' }}>
+            {/* Conditional Rendering Logic for Question Content */}
+            <div style={{ minHeight: isImageQuestion ? '300px' : '30px', margin: '20px 0', textAlign: 'center' }}>
                 {isQuestionLoading || !codeId ? (
                     <p style={{ fontSize: '1.1em', fontWeight: '500' }}>Retrieving puzzle details...</p>
                 ) : isImageQuestion ? (
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <img 
                             src={quizQuestion} 
-                            alt="Quiz Question Image" 
-                            style={{ maxWidth: '100%', height: 'auto', borderRadius: '4px', border: '1px solid #ccc' }}
+                            alt="Quiz Question" 
+                            style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px', border: '1px solid #ccc' }}
                             onError={(e) => {
                                 (e.target as HTMLImageElement).onerror = null; 
                                 (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/cc0000/ffffff?text=Image+Failed+to+Load'; 
@@ -137,12 +176,12 @@ export default function TreasureQuizPage() {
                         />
                     </div>
                 ) : (
-                    <p style={{ fontSize: '1.1em', fontWeight: '500' }}>{quizQuestion}</p>
+                    <p style={{ fontSize: '1.2em', fontWeight: '600', color: '#444' }}>{quizQuestion}</p>
                 )}
             </div>
             
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                <label htmlFor="quiz-input" style={{ fontWeight: 'bold' }}>
+                <label htmlFor="quiz-input" style={{ fontWeight: 'bold', color: '#333' }}>
                     Your Answer:
                 </label>
                 <input
@@ -152,37 +191,66 @@ export default function TreasureQuizPage() {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAnswer(e.target.value)}
                     required
                     disabled={isLoading || isQuestionLoading || !codeId || message.startsWith('✅')}
-                    style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }}
+                    /* Fixed Visibility Styles */
+                    style={{ 
+                        padding: '12px', 
+                        border: '2px solid #bbb', 
+                        borderRadius: '4px',
+                        backgroundColor: '#ffffff',
+                        color: '#000000',
+                        fontSize: '16px'
+                    }}
                 />
-                <button type="submit" disabled={isLoading || isQuestionLoading || !codeId || message.startsWith('✅')} style={{ padding: '10px', backgroundColor: isLoading || isQuestionLoading || !codeId || message.startsWith('✅') ? '#aaa' : '#ff4500', color: 'white', border: 'none', borderRadius: '4px', cursor: isLoading || isQuestionLoading || !codeId || message.startsWith('✅') ? 'not-allowed' : 'pointer' }}>
+                <button 
+                    type="submit" 
+                    disabled={isLoading || isQuestionLoading || !codeId || message.startsWith('✅')} 
+                    style={{ 
+                        padding: '12px', 
+                        backgroundColor: (isLoading || isQuestionLoading || !codeId || message.startsWith('✅')) ? '#aaa' : '#ff4500', 
+                        color: 'white', 
+                        border: 'none', 
+                        borderRadius: '4px', 
+                        fontWeight: 'bold',
+                        cursor: (isLoading || isQuestionLoading || !codeId || message.startsWith('✅')) ? 'not-allowed' : 'pointer' 
+                    }}
+                >
                     {isLoading ? 'Checking Answer...' : 'Submit Answer'}
                 </button>
             </form>
 
             {message && (
-                <p style={{ fontWeight: 'bold', marginTop: '20px', padding: '10px', borderLeft: message.startsWith('✅') ? '4px solid green' : '4px solid red', backgroundColor: message.startsWith('✅') ? '#e6ffe6' : '#ffe6e6', color: message.startsWith('✅') ? '#333' : '#a00' }}>
+                <p style={{ 
+                    fontWeight: 'bold', 
+                    marginTop: '20px', 
+                    padding: '10px', 
+                    borderRadius: '4px',
+                    borderLeft: message.startsWith('✅') ? '4px solid green' : '4px solid red', 
+                    backgroundColor: message.startsWith('✅') ? '#e6ffe6' : '#ffe6e6', 
+                    color: message.startsWith('✅') ? '#333' : '#a00' 
+                }}>
                     {message}
                 </p>
             )}
             
             {/* Display the submission time */}
             {submissionTime && message.startsWith('✅') && (
-                <p style={{ color: "#FF0000", fontWeight: 'bold', marginTop: '20px', padding: '10px', backgroundColor: "#FFFFFF" }}>
-                    Submission recorded at: <span style={{ fontWeight: 'bold' }}>{submissionTime}</span>
+                <p style={{ color: "#FF0000", fontWeight: 'bold', marginTop: '20px', padding: '10px', border: '1px solid #ffcccc', borderRadius: '4px' }}>
+                    Submission recorded at: <span>{submissionTime}</span>
                 </p>
             )}
             
             {/* Display the Secret Word */}
             {secretWord && message.startsWith('✅') && (
-                <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', backgroundColor: '#e0ffff', textAlign: 'center' }}>
-                    <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.2em', marginBottom: '5px' }}>
+                <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', borderRadius: '8px', backgroundColor: '#e0ffff', textAlign: 'center' }}>
+                    <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.1em', marginBottom: '5px' }}>
                         Clue:
                     </p>
-                    <p style={{ fontWeight: '900', color: '#ff4500', fontSize: '1.8em', letterSpacing: '2px' }}>
+                    <p style={{ fontWeight: '900', color: '#ff4500', fontSize: '1.8em', letterSpacing: '2px', margin: 0 }}>
                         {secretWord}
                     </p>
                 </div>
             )}
         </div>
-    );
+    </div>
+);
 }

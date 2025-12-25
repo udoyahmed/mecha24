@@ -39,7 +39,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Code": "85mz786bdzHd18",
         "Password": 341691,
         "Quiz_Code": "9SOx8ukPc6c4NX",
-        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
+        "Quiz_Question": "https://i.postimg.cc/XN93K7RJ/9SOx8uk-Pc6c4NX.jpg",
         "Quiz_Answer": "advisor", 
         "Secret_Word": "Mecha Drawing CDI"
     },
