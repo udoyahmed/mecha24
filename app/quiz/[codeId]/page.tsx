@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import parse from 'html-react-parser';
 // Note: next/navigation import is intentionally removed to fix compilation errors.
 
 export default function TreasureQuizPage() {
@@ -256,13 +257,13 @@ export default function TreasureQuizPage() {
                         Clue:
                     </p> */}
                     <p style={{ 
-                        fontWeight: '900', 
+                        fontWeight: '500', 
                         fontFamily: '"Courier New", Courier, monospace', 
                         color: '#862a2aff', fontSize: '1rem', 
                         whiteSpace: 'pre-line',
                         margin: 0 
                     }}>
-                        {secretWord}
+                        {parse(secretWord)}
                     </p>
                 </div>
             )}

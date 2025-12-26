@@ -24,7 +24,7 @@ export const treasureFlowDB: TreasureFlow[] = [
 
         Sherlock: So what seems to be the case?
 
-        Cop: The person lying in front of you is D. Neighbors found him dead like this.
+        Cop: The person lying in front of you is Doyle. Neighbors found him dead like this.
 
         Watson: Observing the body, I smell bitter almonds.
         
@@ -39,11 +39,11 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Secret_Word": 
         `[Part 2]
 
-        Sherlock and Watson check the call records of the victim, D
+        Sherlock and Watson check the call records of the victim, Doyle
 
-        Sherlock: D seemed to have called someone close to the time of his death. We should get in contact with whoever was on the other side of the phone.
+        Sherlock: Doyle seemed to have called someone close to the time of his death. We should get in contact with whoever was on the other side of the phone.
 
-        The person on the other side of the phone explained that D had gotten a ring at his door, which was supposedly the mailman.
+        The person on the other side of the phone explained that Doyle had gotten a ring at his door, which was supposedly the mailman.
         `
     },
     {
@@ -64,7 +64,21 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Code": "9SOx8ukPc6c4NX",
         "Quiz_Question": "https://i.postimg.cc/XN93K7RJ/9SOx8uk-Pc6c4NX.jpg",
         "Quiz_Answer": "advisor", 
-        "Secret_Word": "Mecha Drawing CDI"
+        "Secret_Word": 
+        `[Part 4]
+
+        Sherlock and Watson investigate Doyle's workplace
+
+        Manager: Due to recent budget cuts, a lot of people were laid off. However, not all of them were okay with accepting it. Doyle was in charge of choosing who to fire.
+
+        Sherlock: Who was notably unhappy with Doyle because of it?
+
+        Manager: Heisenberg.
+
+        Sherlock and Watson go to Heisenberg's residence and see him dead—suicide—with a note confessing to his crime.
+
+        Sherlock and Watson also find a piece of <b>paper</b>. It had the sentence "Swipe" written on it.
+        `
     },
     {           // complete
         "Code": "62c729OTIP60bR",
@@ -73,19 +87,11 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Question": "https://i.postimg.cc/3xdg66Cp/52n-X50XRt4Em-IZ.jpg",
         "Quiz_Answer": "crucible", 
         "Secret_Word": 
-        `[Part 4]
+        `[Part 5]
 
-        Sherlock and Watson investigate D's workplace
+        In the forensic lab
 
-        Manager: Due to recent budget cuts, a lot of people were laid off. However, not all of them were okay with accepting it. D was in charge of choosing who to fire.
-
-        Sherlock: Who was notably unhappy with D because of it?
-
-        Manager: E.
-
-        Sherlock and Watson go to E's residence and see him dead—suicide—with a note confessing to his crime.
-
-        Sherlock and Watson also find a piece of <b>paper</b>. It had the sentence "Swipe" written on it.
+        Watson: There seem to be traces of powdered glass and red phosphorus on Doyle's body.
         `
     },
     {           // complete
@@ -94,7 +100,11 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Code": "al8INHy3vC79AB",
         "Quiz_Question": "https://i.postimg.cc/28CGH2K9/image.png",
         "Quiz_Answer": "gas welding",
-        "Secret_Word": "Welding Shop CDI"
+        "Secret_Word":
+        `[Part 6]
+
+        After investigating the neighbors' CCTV cameras, they find that there was a bright <b>flash</b> seen during the time of death.
+        `
     },
 ];
 
