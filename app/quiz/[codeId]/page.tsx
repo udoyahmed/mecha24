@@ -244,18 +244,24 @@ export default function TreasureQuizPage() {
             
             {/* Display the submission time */}
             {submissionTime && message.startsWith('✅') && (
-                <p style={{ color: "#FF0000", fontWeight: 'bold', marginTop: '20px', padding: '10px', border: '1px solid #ffcccc', borderRadius: '4px' }}>
+                <p style={{ color: "#862a2aff", fontWeight: 'bold', marginTop: '20px', padding: '10px', border: '1px solid #ffcccc', borderRadius: '4px' }}>
                     Submission recorded at: <span>{submissionTime}</span>
                 </p>
             )}
             
             {/* Display the Secret Word */}
             {secretWord && message.startsWith('✅') && (
-                <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', borderRadius: '8px', backgroundColor: '#e0ffff', textAlign: 'center' }}>
-                    <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.1em', marginBottom: '5px' }}>
+                <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', borderRadius: '8px', backgroundColor: '#e0ffff'}}>
+                    {/* <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.1em', marginBottom: '5px' }}>
                         Clue:
-                    </p>
-                    <p style={{ fontWeight: '900', color: '#ff4500', fontSize: '1.8em', letterSpacing: '2px', margin: 0 }}>
+                    </p> */}
+                    <p style={{ 
+                        fontWeight: '900', 
+                        fontFamily: '"Courier New", Courier, monospace', 
+                        color: '#862a2aff', fontSize: '1rem', 
+                        whiteSpace: 'pre-line',
+                        margin: 0 
+                    }}>
                         {secretWord}
                     </p>
                 </div>
