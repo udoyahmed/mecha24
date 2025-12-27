@@ -56,7 +56,7 @@ export default function Finale() {
                             fontFamily: '"Courier New", Courier, monospace', 
                             color: '#862a2aff', fontSize: '1rem', 
                             whiteSpace: 'pre-line',
-                            margin: 0 
+                            margin: 0, 
                         }}>
                             [Part 7]<br></br><br></br>No murder weapon was found at the crime scene. How did Doyle's death unfold?
                         </p>
@@ -69,6 +69,15 @@ export default function Finale() {
                             fontSize: '0.9rem', 
                             paddingTop: '30px',
                             textAlign: 'left', // Ensuring text stays aligned properly
+
+                            marginTop: '30px',
+                            padding: '30px', 
+                            maxWidth: '600px', 
+                            width: '100%',
+                            backgroundColor: 'rgba(255, 255, 255, 0.98)', 
+                            border: '2px dashed #862a2aff', 
+                            borderRadius: '12px', 
+                            boxShadow: '0 8px 16px rgba(0,0,0,0.2)' 
                         }}>
                             Doyle was on his phone when suddenly the doorbell rang; he had gotten (m) 
                             <input name="blank1" value={answers.blank1} onChange={handleChange} style={inputStyle} />. <br/>

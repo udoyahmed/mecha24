@@ -1,12 +1,11 @@
 // lib/codes.ts
 
-// One structure handles both the password and the quiz for a given flow
 export interface TreasureFlow {
-    Code: string;          // The initial page identifier (e.g., "treasure1234")
-    Password: number;      // The password to match
-    Quiz_Code: string;     // The unique identifier for the quiz page (e.g., "quiz-A")
-    Quiz_Question: string; // The question text
-    Quiz_Answer: string;   // The correct answer for the quiz (store as string)
+    Code: string;  
+    Password: number;
+    Quiz_Code: string; 
+    Quiz_Question: string;
+    Quiz_Answer: string; 
     Secret_Word: string;
 }
 
