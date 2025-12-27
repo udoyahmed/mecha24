@@ -79,18 +79,18 @@ export default function Finale() {
                             borderRadius: '12px', 
                             boxShadow: '0 8px 16px rgba(0,0,0,0.2)' 
                         }}>
-                            Doyle was on his phone when suddenly the doorbell rang; he had gotten (m) 
+                            Doyle was on his phone when suddenly the doorbell rang; he had gotten 
                             <input name="blank1" value={answers.blank1} onChange={handleChange} style={inputStyle} />. <br/>
                             
-                            <br></br>He picked it up and (s) <input name="blank2" value={answers.blank2} onChange={handleChange} style={inputStyle} /> it. <br/>
+                            <br></br>He picked it up and <input name="blank2" value={answers.blank2} onChange={handleChange} style={inputStyle} /> it. <br/>
                             
-                            <br></br>Suddenly, it caught (f) <input name="blank3" value={answers.blank3} onChange={handleChange} style={inputStyle} />. <br/>
+                            <br></br>Suddenly, it caught <input name="blank3" value={answers.blank3} onChange={handleChange} style={inputStyle} />. <br/>
                             
-                            <br></br>Seeing this, Doyle got (s) <input name="blank4" value={answers.blank4} onChange={handleChange} style={inputStyle} /> and put his hands over his mouth. <br/>
+                            <br></br>Seeing this, Doyle got <input name="blank4" value={answers.blank4} onChange={handleChange} style={inputStyle} /> and put his hands over his mouth. <br/>
                             
-                            <br></br>He didn’t know it was laced with (c) <input name="blank5" value={answers.blank5} onChange={handleChange} style={inputStyle} />. <br/>
+                            <br></br>He didn’t know it was laced with <input name="blank5" value={answers.blank5} onChange={handleChange} style={inputStyle} />. <br/>
                             
-                            <br></br>The evidence (d) <input name="blank6" value={answers.blank6} onChange={handleChange} style={inputStyle} /> itself, as it was made out of (f) <input name="blank7" value={answers.blank7} onChange={handleChange} style={inputStyle} />.
+                            <br></br>The evidence <input name="blank6" value={answers.blank6} onChange={handleChange} style={inputStyle} /> itself, as it was made out of  <input name="blank7" value={answers.blank7} onChange={handleChange} style={inputStyle} />.
                         </div>
 
                         <button onClick={handleSubmit} style={buttonStyle}>Submit Investigation</button>
