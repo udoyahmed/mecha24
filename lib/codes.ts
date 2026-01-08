@@ -14,7 +14,7 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Code": "T883Q28d5aEnaa",
         "Password": 907235,
         "Quiz_Code": "OIg542sST2Kow0",
-        "Quiz_Question": "https://i.postimg.cc/bJPk8V2h/eideqn.jpg",
+        "Quiz_Question": "https://i.postimg.cc/RhzpYvq6/reddit.gif",
         "Quiz_Answer": "reddit",
         "Secret_Word": 
         `[Part 1]
