@@ -1,4 +1,3 @@
-// app/treasure/[codeId]/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -7,8 +6,7 @@ import { teamData, CLUE_THRESHOLD } from '../../../lib/teamData';
 
 export default function TreasurePage() {
     const params = useParams();
-    const router = useRouter(); // Initialize router for redirection
-    // Safely extract the dynamic code ID (e.g., 'treasure1234')
+    const router = useRouter();
     const pageCode = Array.isArray(params.codeId) ? params.codeId[0] : params.codeId || '';
 
     const [teamName, setTeamName] = useState('');
@@ -20,24 +18,22 @@ export default function TreasurePage() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setMessage(''); // Clear previous message
+        setMessage(''); 
         setIsLoading(true);
 
         try {
-            // Fetch request goes to the API route defined in app/api/password/route.ts
             const response = await fetch('/api/password', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    pageCode: pageCode,           // Sends the dynamic URL code
-                    enteredPassword: password,    // Sends the user's input
+                    pageCode: pageCode,
+                    enteredPassword: password,
                 }),
             });
 
             const data = await response.json();
 
             if (data.isCorrect) {
-                // Check team standing
                 const normalizedInput = teamName.trim().toLowerCase();
                 const matchedTeamKey = Object.keys(teamData).find(key => key.toLowerCase() === normalizedInput);
                 const currentTeamClues = matchedTeamKey ? teamData[matchedTeamKey] : undefined;
@@ -45,12 +41,10 @@ export default function TreasurePage() {
                 if (currentTeamClues === undefined) {
                     setMessage('❌ Team name not recognized. Please check spelling.');
                 } else {
-                    // Update team name to match the canonical casing (e.g., "team alpha" -> "Team Alpha")
                     if (matchedTeamKey) setTeamName(matchedTeamKey);
 
                     setMessage('✅ Code accepted! ' + data.message);
                     
-                    // REDIRECT to the new URL: /quiz/quiz-A
                     if (data.nextPageUrl) {
                         if (currentTeamClues > CLUE_THRESHOLD) {
                             setNextUrl(data.nextPageUrl);
@@ -62,7 +56,7 @@ export default function TreasurePage() {
                 }
             } else {
                 setMessage('❌ ' + data.message);
-                setPassword(''); // Clear input on failure
+                setPassword('');
             }
 
         } catch (error) {
@@ -99,9 +93,8 @@ export default function TreasurePage() {
             marginBottom: '10px', 
             letterSpacing: '2px', 
             textAlign: 'center',
-            /* Added Font Styles Below */
             fontFamily: '"Manufacturing Consent", sans-serif', 
-            fontSize: '2rem', // Adjust size as needed for this specific font
+            fontSize: '2rem',
             fontWeight: 'normal',
             textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
         }}>
@@ -181,13 +174,12 @@ export default function TreasurePage() {
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                             required
                             disabled={isLoading}
-                            /* EXPLICIT COLORS ADDED HERE */
                             style={{ 
                                 padding: '12px', 
-                                border: '2px solid #bbb', // Darker border for visibility
+                                border: '2px solid #bbb',
                                 borderRadius: '4px',
-                                backgroundColor: '#ffffff', // Force white background
-                                color: '#000000', // Force black text/dots
+                                backgroundColor: '#ffffff',
+                                color: '#000000',
                                 fontSize: '16px'
                             }}
                         />

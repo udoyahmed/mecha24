@@ -2,36 +2,27 @@
 
 import { useState, useEffect } from 'react';
 import parse from 'html-react-parser';
-// Note: next/navigation import is intentionally removed to fix compilation errors.
 
 export default function TreasureQuizPage() {
-    // Workaround to get ID from URL path (replaces Next.js useParams)
     const [codeId, setCodeId] = useState('');
 
-    // Quiz State
     const [answer, setAnswer] = useState('');
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [submissionTime, setSubmissionTime] = useState<string | null>(null); 
     
-    // State to hold the secret word revealed by the API
     const [secretWord, setSecretWord] = useState<string | null>(null); 
     
-    // Question Fetching State
     const [quizQuestion, setQuizQuestion] = useState('Retrieving puzzle details...');
     const [isQuestionLoading, setIsQuestionLoading] = useState(true);
 
-    // Helper to check if the question content is a URL
     const isImageQuestion = quizQuestion.startsWith('http');
 
-    // --- EFFECT 1: EXTRACT ID FROM URL PATH (Workaround) ---
     useEffect(() => {
-        // Only run this logic on the client side
         if (typeof window !== 'undefined') {
-            const path = window.location.pathname; // e.g., /quiz/quiz-A
+            const path = window.location.pathname;
             const parts = path.split('/').filter(part => part.length > 0);
             
-            // The ID should be the last part of the path 
             if (parts.length > 0) {
                 const id = parts[parts.length - 1];
                 if (id && id !== 'quiz') { 
@@ -41,14 +32,12 @@ export default function TreasureQuizPage() {
         }
     }, []); 
 
-    // --- EFFECT 2: FETCH QUESTION ON CODE ID LOADED ---
     useEffect(() => {
-        if (!codeId) return; // Wait until codeId is extracted from the URL
+        if (!codeId) return;
 
         const fetchQuestion = async () => {
             setIsQuestionLoading(true);
             try {
-                // Call the API route for the question
                 const response = await fetch(`/api/quiz-question?codeId=${codeId}`); 
                 const data = await response.json();
                 
@@ -68,7 +57,6 @@ export default function TreasureQuizPage() {
         fetchQuestion();
     }, [codeId]);
 
-    // --- FORM SUBMISSION HANDLER ---
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setMessage(''); 
@@ -83,12 +71,11 @@ export default function TreasureQuizPage() {
         }
 
         try {
-            // Call the verification API
             const response = await fetch('/api/quiz', { 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
-                    quizCode: codeId, // Correct key name for API
+                    quizCode: codeId,
                     submittedAnswer: answer,
                 }),
             });
@@ -100,7 +87,6 @@ export default function TreasureQuizPage() {
                 const now = new Date();
                 setSubmissionTime(now.toLocaleTimeString()); 
                 
-                // Set the secret word received from the API
                 if (data.secretWord) {
                     setSecretWord(data.secretWord);
                 }
@@ -118,7 +104,6 @@ export default function TreasureQuizPage() {
     };
 
     return (
-    /* Background Placeholder Container */
     <div style={{ 
         minHeight: '100vh', 
         display: 'flex', 
@@ -126,7 +111,6 @@ export default function TreasureQuizPage() {
         alignItems: 'center', 
         justifyContent: 'center',
         padding: '20px',
-        /* Background Image Placeholder */
         backgroundImage: 'url("https://i.postimg.cc/CKbqDfV6/image.png")', 
         backgroundColor: '#f4f4f4', 
         backgroundSize: 'cover',
@@ -134,29 +118,25 @@ export default function TreasureQuizPage() {
         fontFamily: 'sans-serif'
     }}>
         
-        {/* Logo Section */}
         <img 
             src="https://i.postimg.cc/g0cxwtN6/logo4.png" 
             alt="Mechville Logo" 
             style={{ width: '150px', marginBottom: '5px' }} 
         />
 
-        {/* Title Section */}
         <h1 style={{ 
             color: '#851c1cff', 
             marginBottom: '10px', 
             letterSpacing: '2px', 
             textAlign: 'center',
-            /* Added Font Styles Below */
             fontFamily: '"Manufacturing Consent", sans-serif', 
-            fontSize: '2rem', // Adjust size as needed for this specific font
+            fontSize: '2rem',
             fontWeight: 'normal',
             textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
         }}>
             The Hound of Mechville
         </h1>
 
-        {/* Main Quiz Card */}
         <div style={{ 
             padding: '30px', 
             maxWidth: '600px', 
@@ -170,7 +150,6 @@ export default function TreasureQuizPage() {
                 Quiz Code: {codeId || 'Loading...'}
             </h2>
             
-            {/* Conditional Rendering Logic for Question Content */}
             <div style={{ minHeight: isImageQuestion ? '300px' : '30px', margin: '20px 0', textAlign: 'center' }}>
                 {isQuestionLoading || !codeId ? (
                     <p style={{ fontSize: '1.1em', fontWeight: '500' }}>Retrieving puzzle details...</p>
@@ -202,7 +181,6 @@ export default function TreasureQuizPage() {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAnswer(e.target.value)}
                     required
                     disabled={isLoading || isQuestionLoading || !codeId || message.startsWith('✅')}
-                    /* Fixed Visibility Styles */
                     style={{ 
                         padding: '12px', 
                         border: '2px solid #bbb', 
@@ -243,14 +221,12 @@ export default function TreasureQuizPage() {
                 </p>
             )}
             
-            {/* Display the submission time */}
             {submissionTime && message.startsWith('✅') && (
                 <p style={{ color: "#862a2aff", fontWeight: 'bold', marginTop: '20px', padding: '10px', border: '1px solid #ffcccc', borderRadius: '4px' }}>
                     Submission recorded at: <span>{submissionTime}</span>
                 </p>
             )}
             
-            {/* Display the Secret Word */}
             {secretWord && message.startsWith('✅') && (
                 <div style={{ marginTop: '20px', padding: '15px', border: '2px dashed #00bfff', borderRadius: '8px', backgroundColor: '#e0ffff'}}>
                     {/* <p style={{ fontWeight: 'bold', color: '#0070c0', fontSize: '1.1em', marginBottom: '5px' }}>
