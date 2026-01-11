@@ -6,5 +6,6 @@ export const teamData: Record<string, number> = {
     "Team Gamma": 2,
     "Team Delta": 0,
     "Seek Mundus": 10,
+    "Hello World": 23,
     // Add all teams here...
 };
