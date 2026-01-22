@@ -36,13 +36,9 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Question": "https://i.postimg.cc/TwrP46h6/Screenshot-2025-12-23-034727-min.png",
         "Quiz_Answer": "isometric", 
         "Secret_Word": 
-        `[Part 2]
+        `[Part 6]
 
-        Sherlock and Watson check the call records of the victim, Doyle
-
-        Sherlock: Doyle seemed to have called someone close to the time of his death. We should get in contact with whoever was on the other side of the phone.
-
-        The person on the other side of the phone explained that Doyle had gotten a ring at his door, which was supposedly the mailman.
+        After investigating the neighbors' CCTV cameras, they find that there was a bright <b>flash</b> seen during the time of death.
         `
     },
     {
@@ -100,11 +96,16 @@ export const treasureFlowDB: TreasureFlow[] = [
         "Quiz_Question": "https://i.postimg.cc/28CGH2K9/image.png",
         "Quiz_Answer": "gas welding",
         "Secret_Word":
-        `[Part 6]
+        `[Part 2]
 
-        After investigating the neighbors' CCTV cameras, they find that there was a bright <b>flash</b> seen during the time of death.
+        Sherlock and Watson check the call records of the victim, Doyle
+
+        Sherlock: Doyle seemed to have called someone close to the time of his death. We should get in contact with whoever was on the other side of the phone.
+
+        The person on the other side of the phone explained that Doyle had gotten a ring at his door, which was supposedly the mailman.
         `
     },
 ];
 
 export default treasureFlowDB;
+

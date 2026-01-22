@@ -243,6 +243,30 @@ export default function TreasureQuizPage() {
                     </p>
                 </div>
             )}
+
+            {codeId === 'H0rPNq00mzua8M' && message.startsWith('✅') && (
+                <div style={{ marginTop: '20px' }}>
+                    <button
+                        onClick={() => {
+                            if (window.confirm('Please remember take a screenshot before you proceed.')) {
+                                window.location.href='/finale';
+                            }
+                        }}
+                        style={{
+                            padding: '12px',
+                            backgroundColor: '#862a2aff',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            width: '100%'
+                        }}
+                    >
+                        Proceed to the Final Challenge
+                    </button>
+                </div>
+            )}
         </div>
     </div>
 );
