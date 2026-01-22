@@ -8,6 +8,6 @@ export const puzzleData = {
     blank6: ["destroyed", "disintegrated"], 
     blank7: ["flashpaper"]
   },
-  finalClue: "https://i.postimg.cc/7Lpg7QXY/888.jpg", 
+  finalClue: "https://i.postimg.cc/C5DY5d5x/888.jpg", 
   successMessage: "Congratulations, Detective! You've solved the mystery of the Hound."
 };
