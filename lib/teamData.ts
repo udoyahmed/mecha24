@@ -15,5 +15,8 @@ export const teamData: Record<string, number> = {
     "The Valve Vigilantes": 0,
     "Heinz Hitler": 0,
     "Holmes-less & Hopeless": 0,
+    "যান্ত্রিক ঐক্য": 0,
+    "TEAM ENTROPY": 0,
+    "Mark 85": 0,
     // Add all teams here...
 };
