@@ -13,10 +13,15 @@ export const teamData: Record<string, number> = {
     "Owl's Gaze ": 0,
     "Baker Street Syndicate": 0,
     "The Valve Vigilantes": 0,
-    "Heinz Hitler": 0,
     "Holmes-less & Hopeless": 0,
     "যান্ত্রিক ঐক্য": 0,
     "TEAM ENTROPY": 0,
     "Mark 85": 0,
+    "Quest Seekers": 0,
+    "PentaCore": 0,
+    "I Have Your Nut": 0,
+    "Where is my nut": 0,
+    "X-MEN": 0,
+    "Trouvaille": 0,
     // Add all teams here...
 };

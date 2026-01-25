@@ -52,6 +52,7 @@ export default function TeamsPage() {
         borderRadius: '12px',
         boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
       }}>
+        <p className="text-center font-semibold text-gray-700 mb-4">Total Teams: {allTeams.length}</p>
         <div className="mb-6">
           <input
             type="text"
