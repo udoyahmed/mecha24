@@ -25,5 +25,7 @@ export const teamData: Record<string, number> = {
     "Trouvaille": 0,
     "Sherlock Homies": 0,
     "Tantei": 0,
+    "মুড়ির টিন": 0,
+    "Sher-unlock Holmes": 0,
     // Add all teams here...
 };
