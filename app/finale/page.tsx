@@ -7,6 +7,7 @@ export default function Finale() {
         blank1: '', blank2: '', blank3: '', blank4: '', blank5: '', blank6: '', blank7: ''
     });
     const [result, setResult] = useState<{ success: boolean; message: string; image?: string } | null>(null);
+    const [timestamp, setTimestamp] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setAnswers({ ...answers, [e.target.name]: e.target.value });
@@ -19,6 +20,7 @@ export default function Finale() {
         });
         const data = await res.json();
         setResult(data);
+        setTimestamp(new Date().toLocaleTimeString());
     };
 
     return (
@@ -47,7 +49,7 @@ export default function Finale() {
                 {result?.success ? (
                     <div style={{ textAlign: 'center' }}>
                         <h2 style={{ color: '#2e7d32' }}>{result.message}</h2>
-                        <img src={result.image} alt="Final Clue" style={{ width: '100%', marginTop: '15px', borderRadius: '8px' }} />
+                        <p style={{ color: '#666', fontSize: '0.9rem', marginTop: '10px', fontWeight: 'bold' }}>{timestamp}</p>
                     </div>
                 ) : (
                     <>

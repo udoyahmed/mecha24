@@ -9,5 +9,5 @@ export const puzzleData = {
     blank7: ["flashpaper"]
   },
   finalClue: "https://i.postimg.cc/C5DY5d5x/888.jpg", 
-  successMessage: "Congratulations, Detective! You've solved the mystery of the Hound."
+  successMessage: "Congratulations, Detective! Go to your Deputy Investigator!"
 };
