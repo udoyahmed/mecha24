@@ -19,13 +19,14 @@ export const teamData: Record<string, number> = {
     "Mark 85": 0,
     "Quest Seekers": 0,
     "PentaCore": 0,
-    "I Have Your Nut": 0,
-    "Where is my nut": 0,
+    "I am your treasure": 0,
+    "Where is my treasure": 0,
     "X-MEN": 0,
     "Trouvaille": 0,
     "Sherlock Homies": 0,
     "Tantei": 0,
     "মুড়ির টিন": 0,
     "Sher-unlock Holmes": 0,
+    "Pachmishali": 0,
     // Add all teams here...
 };
