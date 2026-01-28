@@ -3,7 +3,7 @@ export const CLUE_THRESHOLD = 5;
 export const teamData: Record<string, number> = {
     "The Laggers": 0,
     "No Shit Sherlock!": 0,
-    "চার ভাই চম্পা": 0,
+    "Windows 5": 0,
     "The Baker Street Irregulars": 0,
     "Team GPS": 0,
     "The Brain Buffers": 0,

@@ -75,7 +75,7 @@ export default function TreasurePage() {
         alignItems: 'center', 
         justifyContent: 'center',
         padding: '20px',
-        backgroundImage: 'url("https://i.postimg.cc/CKbqDfV6/image.png")', 
+        backgroundImage: 'url("https://i.postimg.cc/8cZ4CxrY/2.jpg")', 
         backgroundColor: '#f4f4f4', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
